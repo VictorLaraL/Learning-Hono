@@ -1,2 +1,8 @@
-# Learning-Hono
-Repo to add my notation about hono framework
+```
+npm install
+npm run dev
+```
+
+```
+npm run deploy
+```
