@@ -1,9 +1,16 @@
 import { Hono } from 'hono'
+import { userApp } from './user'
 
-const app = new Hono()
+/**
+ * En este fichero dejamos la instancia principal de Hono que llamaremos 
+ * mainApp, a esta solo le asociaremos las rutas de las otras instacias que vamos a crear.
+ */
+const mainApp = new Hono().basePath('/api/')
 
-app.get('/', (c) => {
-  return c.text('Hello Hono!')
+mainApp.get('/', (c) => {
+  return c.text('Hello Bitch Hono!')
 })
 
-export default app
+mainApp.route('/user/', userApp)
+
+export default mainApp
