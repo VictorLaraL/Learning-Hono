@@ -1,4 +1,5 @@
 import { Hono } from "hono";
+import { zUserValidator } from "./validator";
 
 /**
  * En este modulo crearemos los endpoints necesarios para el modelo de usuarios.
@@ -15,7 +16,7 @@ userApp
             'data':userList
        })
    })
-   .post('/', async (c) =>{
+   .post('/', zUserValidator, async (c) =>{
 
     // Con este metodo parsebody le asignamos el contenido de la peticion
     // a body.
